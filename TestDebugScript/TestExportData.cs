@@ -5,7 +5,7 @@ namespace EAS.LeegooBuilder.Server.DebugScript.TestExport
     /// <summary>
     /// Sample class with some demonstration methods
     /// </summary>
-    public class TestExportData : Server.DebugScript.DebugScript
+    public class TestExportData : BusinessLayer.ScriptEngine.DebugScript.DebugScript
     {
         private readonly string _yourName;
         
