@@ -1,0 +1,49 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+	<PropertyGroup>
+
+		<!--Default setting (without user interface)-->
+		<!--<TargetFramework>net6.0</TargetFramework>-->
+
+		<!--alternative setting, if a user interface is needed-->
+		<TargetFramework>net6.0-windows</TargetFramework>
+		<UseWpf>true</UseWpf>
+
+		<!--Path to LEEGOO BUILDERs binary folder (where EAS.LeegooBuilder.Client.GUI.Shell.exe is located) -->
+		<OutputPath>C:\Quelltexte\.Gitea\LeegooBuilder\Binaries\Debug-AnyCPU</OutputPath>
+
+		<AssemblyName>EAS.LeegooBuilder.Server.DebugScript.TestExport</AssemblyName>
+		<RootNamespace>EAS.LeegooBuilder.Server.DebugScript.TestExport</RootNamespace>
+
+		<!--This setting is needed to enable IntelliSense for this project within the script editor.-->
+		<GenerateDocumentationFile>True</GenerateDocumentationFile>
+
+
+		<ProduceReferenceAssembly>False</ProduceReferenceAssembly>
+
+		<StartAction>Program</StartAction>
+		<StartProgram>$(OutputPath)\EAS.LeegooBuilder.Client.GUI.Shell.exe</StartProgram>
+
+		<GenerateAssemblyInfo>false</GenerateAssemblyInfo>
+		<AppendTargetFrameworkToOutputPath>false</AppendTargetFrameworkToOutputPath>
+		<AppendRuntimeIdentifierToOutputPath>false</AppendRuntimeIdentifierToOutputPath>
+
+	</PropertyGroup>
+
+	
+	<ItemGroup>
+		<Reference Include="EAS.LeegooBuilder.Common.CommonTypes">
+			<HintPath>$(OutputPath)\EAS.LeegooBuilder.Common.CommonTypes.dll</HintPath>
+		</Reference>
+		<Reference Include="EAS.LeegooBuilder.Server.BusinessLayer">
+			<HintPath>$(OutputPath)\EAS.LeegooBuilder.Server.BusinessLayer.dll</HintPath>
+		</Reference>
+		<Reference Include="EAS.LeegooBuilder.Server.DataAccess.Core">
+			<HintPath>$(OutputPath)\EAS.LeegooBuilder.Server.DataAccess.Core.dll</HintPath>
+		</Reference>
+		<Reference Include="EAS.LeegooBuilder.Server.DebugScript">
+			<HintPath>$(OutputPath)\EAS.LeegooBuilder.Server.DebugScript.dll</HintPath>
+		</Reference>
+	</ItemGroup>
+
+</Project>
