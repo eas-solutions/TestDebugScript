@@ -1,5 +1,5 @@
 <h1>
-Sample for using DebugScript
+Using DebugScript in Microsoft Visual Studio
 </h1>
 
 - [Roundup](#roundup)
@@ -55,7 +55,7 @@ Open PlugIn.csproj and change the following nodes according to your requirements
 - \<AssemblyName>
 - \<RootNamespace>
 
-OutputPath should point to your binaries folder (see above).
+OutputPath should point to your binaries folder (where EAS.LeegooBuilder.Client.GUI.Shell.exe is located).
 <br><br> 
 
 
@@ -63,7 +63,7 @@ OutputPath should point to your binaries folder (see above).
 Open AssemblyInfo.cs and update all relevant attributes.
 ```c#
 [assembly: AssemblyTitle("TestDebugScript")]
-[assembly: AssemblyDescription("Sample of DebugScript for LEEGOO BUILDER G3")]
+[assembly: AssemblyDescription("Exsample of using DebugScript for LEEGOO BUILDER G3")]
 [assembly: AssemblyConfiguration("")]
 [assembly: AssemblyCompany("EAS")]
 [assembly: AssemblyProduct("TestDebugScript")]
@@ -105,6 +105,7 @@ public override object Main(CustomScriptArgs args)
     var scriptDebugAssembly = new TestExportData(ScriptContext, "Alfred E. Neumann");
     scriptDebugAssembly.HelloWorld();
     WriteLine(scriptDebugAssembly.GetYourName());
+	
     return null;
 }
 ```
