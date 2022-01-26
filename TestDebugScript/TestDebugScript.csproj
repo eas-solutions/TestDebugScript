@@ -35,11 +35,14 @@
 		<Reference Include="EAS.LeegooBuilder.Common.CommonTypes">
 			<HintPath>$(OutputPath)\EAS.LeegooBuilder.Common.CommonTypes.dll</HintPath>
 		</Reference>
-		<Reference Include="EAS.LeegooBuilder.Server.BusinessLayer">
-			<HintPath>$(OutputPath)\EAS.LeegooBuilder.Server.BusinessLayer.dll</HintPath>
+		<Reference Include="EAS.LeegooBuilder.Server.DebugScript">
+			<HintPath>$(OutputPath)\EAS.LeegooBuilder.Server.DebugScript.dll</HintPath>
 		</Reference>
 		<Reference Include="EAS.LeegooBuilder.Server.DataAccess.Core">
 			<HintPath>$(OutputPath)\EAS.LeegooBuilder.Server.DataAccess.Core.dll</HintPath>
+		</Reference>
+		<Reference Include="EAS.LeegooBuilder.Business.Contracts">
+			<HintPath>$(OutputPath)\EAS.LeegooBuilder.Business.Contracts.dll</HintPath>
 		</Reference>
 
 	</ItemGroup>

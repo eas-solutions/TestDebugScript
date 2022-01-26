@@ -1,11 +1,11 @@
-﻿using EAS.LeegooBuilder.Server.BusinessLayer.ScriptEngine;
+﻿using EAS.LeegooBuilder.Business.Contracts.Interfaces;
 
 namespace EAS.LeegooBuilder.Server.DebugScript.TestExport
 {
     /// <summary>
     /// Sample class with some demonstration methods
     /// </summary>
-    public class TestExportData : BusinessLayer.ScriptEngine.DebugScript.DebugScript
+    public class TestExportData : DebugScript
     {
         private readonly string _yourName;
         
@@ -14,7 +14,7 @@ namespace EAS.LeegooBuilder.Server.DebugScript.TestExport
         /// Constructor
         /// </summary>
         /// <param name="scriptContext"></param>
-        public TestExportData(ScriptContext scriptContext) : base(scriptContext) { }
+        public TestExportData(IScriptContext scriptContext) : base(scriptContext) { }
         
         
         /// <summary>
@@ -22,7 +22,7 @@ namespace EAS.LeegooBuilder.Server.DebugScript.TestExport
         /// </summary>
         /// <param name="scriptContext"></param>
         /// <param name="yourName"></param>
-        public TestExportData(ScriptContext scriptContext, string yourName) : base(scriptContext)
+        public TestExportData(IScriptContext scriptContext, string yourName) : base(scriptContext)
         {
             _yourName = yourName;
         }
