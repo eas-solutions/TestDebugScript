@@ -82,20 +82,24 @@ Try to compile the project. No errors should occur.
 
 ## LEEGOO BUILDER integration
 LEEGOO BUILDER needs to be configured to load this assembly.<br>
-Go to the binaries folder (see above) and open `script.config`.<br>
+Go to the binaries folder (see above) and open `script.json`.<br>
 Add the following nodes.
-```xml
-<?xml version="1.0" encoding="utf-8"?>
-<ScriptConfiguration>
-  <ExternalAssemblies>
-    <ExternalAssembly Description="TestExport using DebugScript" AssemblyName="EAS.LeegooBuilder.Server.DebugScript.TestExport.dll" />
-  </ExternalAssemblies>
-  <AdditionalUsings>
-    <AdditionalUsing Description="TestExport using DebugScript" Name="EAS.LeegooBuilder.Server.DebugScript.TestExport" />
-  </AdditionalUsings>
-</ScriptConfiguration>
+```json
+{
+  "ExternalAssemblies": [
+    {
+      "AssemblyName": "EAS.LeegooBuilder.Server.DebugScript.TestExport.dll",
+      "Description": "TestExport using DebugScript"
+    }
+  ],
+  "AdditionalUsings": [
+    {
+      "Name": "EAS.LeegooBuilder.Server.DebugScript.TestExport",
+      "Description": "TestExport using DebugScript"
+    }
+  ]
+}
 ```
-
 
 ## Sample script to call our assembly
 Go to the script editor, create a new script and replace the source code with the following source code:
