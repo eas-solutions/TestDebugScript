@@ -1,4 +1,8 @@
-﻿using EAS.LeegooBuilder.Business.Contracts.Interfaces;
+﻿using System.Linq;
+using EAS.LeegooBuilder.Business.Contracts.Interfaces;
+using EAS.LeegooBuilder.Server.BusinessLayer.DynamicEntities;
+//using System.Linq;*/
+
 
 namespace EAS.LeegooBuilder.Server.DebugScript.TestExport
 {
@@ -34,6 +38,27 @@ namespace EAS.LeegooBuilder.Server.DebugScript.TestExport
         public void HelloWorld()
         {
             ShowMessageBox("Hello World!");
+        }
+
+
+        /// <summary>
+        /// Liest beispielhaft einen Wert aus einer SQL-Tabelle.
+        /// </summary>
+        /// <returns></returns>
+        public string TestEntityFramework()
+        {
+            var result = string.Empty;
+            using var entity = new DynamicEntity(true);
+            {
+                var syslog = entity.SYS_LOG.FirstOrDefault(item => (item.EVENT == "AppVersion"));
+
+                if (syslog?.DATA_1 != null)
+                {
+                    result = syslog.DATA_1;
+                }
+            }
+
+            return result;
         }
         
         

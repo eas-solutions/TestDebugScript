@@ -6,12 +6,13 @@ Using DebugScript in Microsoft Visual Studio
 - [Getting Started](#getting-started)
 - [Requirements](#requirements)
 - [Adjustments](#adjustments)
-  - [1. Change several namings](#1-change-several-namings)
-  - [2. Source Code Adjustments](#2-source-code-adjustments)
-    - [2.1 TestDebugScript.csproj](#21-testdebugscriptcsproj)
-    - [2.2 AssemblyInfo.cs](#22-assemblyinfocs)
+  - [1. References](#1-references)
+  - [2. Change several namings](#2-change-several-namings)
+  - [3. Source Code Adjustments](#3-source-code-adjustments)
+    - [3.1 TestDebugScript.csproj](#31-testdebugscriptcsproj)
+    - [3.2 AssemblyInfo.cs](#32-assemblyinfocs)
 - [LEEGOO BUILDER integration](#leegoo-builder-integration)
-- [Sample script to call our assembly](#sample-script-to-call-our-assembly)
+- [Sample script to call your assembly](#sample-script-to-call-your-assembly)
 
 ## Roundup
 This is a demonstration of how to run LEEGOO BUILDER from Visual Studio to use it's debugger and to have the ability to set breakpoints to simplify script development.
@@ -35,8 +36,15 @@ The following requirements must be met.
 ## Adjustments
 There are several things to be adjusted to make this project working on a developers machine.
 
+### 1. References
+Add a Reference to the correct version of DynamicEntities_*.dll.<br>
+You find the correct assembly in the "LocalAssemblyCache" folder, typically at this location:<br>
+`c:\Users\<YourUserName>\AppData\Roaming\LB.Net\LeegooBuilder.LAC\<CurrentLeegooBuilderVersion>\<UsedDataBaseName>@<HostName>\Environment\`<br>
+Reference the latest file in this folder wich file matches `DynamicEntities_*.dll`.
+<br>
 
-### 1. Change several namings
+
+### 2. Change several namings
 Change the following file names according to your requirements:
 
 - TestDebugScript.csproj
@@ -44,10 +52,9 @@ Change the following file names according to your requirements:
 
 Do not forget to update the namespaces.
 
+### 3. Source Code Adjustments
 
-### 2. Source Code Adjustments
-
-#### 2.1 TestDebugScript.csproj
+#### 3.1 TestDebugScript.csproj
 Open PlugIn.csproj and change the following nodes according to your requirements:
 - \<TargetFramework>
 - \<UseWpf>
@@ -56,10 +63,8 @@ Open PlugIn.csproj and change the following nodes according to your requirements
 - \<RootNamespace>
 
 OutputPath should point to your binaries folder (where EAS.LeegooBuilder.Client.GUI.Shell.exe is located).
-<br><br> 
 
-
-#### 2.2 AssemblyInfo.cs
+#### 3.2 AssemblyInfo.cs
 Open AssemblyInfo.cs and update all relevant attributes.
 ```c#
 [assembly: AssemblyTitle("TestDebugScript")]
@@ -88,11 +93,19 @@ Add the following nodes.
 {
   "ExternalAssemblies": [
     {
+      "AssemblyName": "EAS.LeegooBuilder.Server.DebugScript.dll",
+      "Description": "DebugScript"
+    },
+    {
       "AssemblyName": "EAS.LeegooBuilder.Server.DebugScript.TestExport.dll",
       "Description": "TestExport using DebugScript"
     }
   ],
   "AdditionalUsings": [
+    {
+      "Name": "EAS.LeegooBuilder.Server.DebugScript",
+      "Description": "DebugScript"
+    },
     {
       "Name": "EAS.LeegooBuilder.Server.DebugScript.TestExport",
       "Description": "TestExport using DebugScript"
@@ -101,14 +114,15 @@ Add the following nodes.
 }
 ```
 
-## Sample script to call our assembly
+## Sample script to call your assembly
 Go to the script editor, create a new script and replace the source code with the following source code:
 ```c#
 public override object Main(CustomScriptArgs args)
 {
     var scriptDebugAssembly = new TestExportData(ScriptContext, "Alfred E. Neumann");
     scriptDebugAssembly.HelloWorld();
-    WriteLine(scriptDebugAssembly.GetYourName());
+    WriteLine($"return value of GetYourName(): {scriptDebugAssembly.GetYourName()}");
+    WriteLine($"return value of TestEntityFramework(): {scriptDebugAssembly.TestEntityFramework()}");
 	
     return null;
 }
