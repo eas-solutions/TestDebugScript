@@ -33,14 +33,14 @@
 
 	
 	<ItemGroup>
-		<Reference Include="DynamicEntities_8d6ef413c8e1d89b62134f2078ece45d.dll">
-		  <HintPath>..\..\..\..\Users\t.vitt\AppData\Roaming\LB.Net\LeegooBuilder.LAC\99.99.99.99\beninger_202100929@p71tv\Environment\DynamicEntities_8d6ef413c8e1d89b62134f2078ece45d.dll</HintPath>
+		<Reference Include="DynamicEntities_69084056037482066cf6b7e434495ae7.dll">
+		  <HintPath>..\..\..\..\Users\t.vitt\AppData\Roaming\LB.Net\LeegooBuilder.LAC\99.99.99.99\lbg3_starrag_20210301@p71tv\Environment\DynamicEntities_69084056037482066cf6b7e434495ae7.dll</HintPath>
 		</Reference>
 		<Reference Include="EAS.LeegooBuilder.Common.CommonTypes">
 			<HintPath>$(OutputPath)\EAS.LeegooBuilder.Common.CommonTypes.dll</HintPath>
 		</Reference>
-		<Reference Include="EAS.LeegooBuilder.Server.BusinessLayer, Version=99.99.99.99, Culture=neutral, PublicKeyToken=null">
-		  <HintPath>..\..\LeegooBuilder\Binaries\Debug-AnyCPU\EAS.LeegooBuilder.Server.BusinessLayer.dll</HintPath>
+		<Reference Include="EAS.LeegooBuilder.Server.BusinessLayer">
+		  <HintPath>$(OutputPath)\EAS.LeegooBuilder.Server.BusinessLayer.dll</HintPath>
 		</Reference>
 		<Reference Include="EAS.LeegooBuilder.Server.DebugScript">
 			<HintPath>$(OutputPath)\EAS.LeegooBuilder.Server.DebugScript.dll</HintPath>
@@ -51,8 +51,8 @@
 		<Reference Include="EAS.LeegooBuilder.Business.Contracts">
 			<HintPath>$(OutputPath)\EAS.LeegooBuilder.Business.Contracts.dll</HintPath>
 		</Reference>
-		<Reference Include="Microsoft.EntityFrameworkCore, Version=6.0.1.0, Culture=neutral, PublicKeyToken=adb9793829ddae60">
-		  <HintPath>..\..\LeegooBuilder\Binaries\Debug-AnyCPU\Microsoft.EntityFrameworkCore.dll</HintPath>
+		<Reference Include="Microsoft.EntityFrameworkCore">
+		  <HintPath>$(OutputPath)\Microsoft.EntityFrameworkCore.dll</HintPath>
 		</Reference>
 
 	</ItemGroup>

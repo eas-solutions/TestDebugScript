@@ -37,7 +37,7 @@ The following requirements must be met.
 There are several things to be adjusted to make this project working on a developers machine.
 
 ### 1. References
-Add a Reference to the correct version of DynamicEntities_*.dll.<br>
+Add a Reference to the current version of DynamicEntities_*.dll.<br>
 You find the correct assembly in the "LocalAssemblyCache" folder, typically at this location:<br>
 `c:\Users\<YourUserName>\AppData\Roaming\LB.Net\LeegooBuilder.LAC\<CurrentLeegooBuilderVersion>\<UsedDataBaseName>@<HostName>\Environment\`<br>
 Reference the latest file in this folder wich file matches `DynamicEntities_*.dll`.
@@ -55,7 +55,7 @@ Do not forget to update the namespaces.
 ### 3. Source Code Adjustments
 
 #### 3.1 TestDebugScript.csproj
-Open PlugIn.csproj and change the following nodes according to your requirements:
+Open TestPlugIn.csproj and change the following nodes according to your requirements:
 - \<TargetFramework>
 - \<UseWpf>
 - \<OutputPath>
@@ -115,7 +115,7 @@ Add the following nodes.
 ```
 
 ## Sample script to call your assembly
-Go to the script editor, create a new script and replace the source code with the following source code:
+Start LEEGOO BUILDER and go to the script editor, create a new script and replace the source code with the following source code:
 ```c#
 public override object Main(CustomScriptArgs args)
 {
@@ -127,7 +127,7 @@ public override object Main(CustomScriptArgs args)
     return null;
 }
 ```
-Set a breakpoint e.g. at TestExportData.HelloWorld() and start the script. 
+Set a breakpoint in your development environment e.g. at TestExportData.HelloWorld() and start the script. 
 Visual Studio should stop at the breakpoint.
 
 Take a look at the displayed messagebox and the output window underneath the source code.

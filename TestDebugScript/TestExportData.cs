@@ -48,7 +48,7 @@ namespace EAS.LeegooBuilder.Server.DebugScript.TestExport
         public string TestEntityFramework()
         {
             var result = string.Empty;
-            using var entity = new DynamicEntity(true);
+            using var entity = new DynamicEntity(IdentityService, true);
             {
                 var syslog = entity.SYS_LOG.FirstOrDefault(item => (item.EVENT == "AppVersion"));
 
