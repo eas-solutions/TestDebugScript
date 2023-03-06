@@ -1,0 +1,24 @@
+{
+    // Use IntelliSense to learn about possible attributes.
+    // Hover to view descriptions of existing attributes.
+    // For more information, visit: https://go.microsoft.com/fwlink/?linkid=830387
+    "version": "0.2.0",
+    "configurations": [
+        {
+            "name": "Start Leegoo",
+            "type": "coreclr",
+            "request": "launch",
+            "preLaunchTask": "build",
+            "program": "${workspaceFolder}\\Leegoo\\EAS.LeegooBuilder.Client.GUI.Shell.exe",
+            "args": [],
+            "cwd": "${workspaceFolder}\\Leegoo",
+            "console": "internalConsole",
+            "stopAtEntry": false
+        },
+        {
+            "name": "Attach Leegoo",
+            "type": "coreclr",
+            "request": "attach"
+        }
+    ]
+}
