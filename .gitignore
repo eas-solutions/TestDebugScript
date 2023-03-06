@@ -1,1 +1,5 @@
 /.idea/.idea.TestDebugScript/.idea/.gitignore
+bin/
+obj/
+.idea/
+Leegoo/
