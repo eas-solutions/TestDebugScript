@@ -3,14 +3,14 @@
 	<PropertyGroup>
 
 		<!--Default setting (without user interface)-->
-<!--		<TargetFramework>net6.0</TargetFramework>-->
+<!--		<TargetFramework>net7.0</TargetFramework>-->
 
 		<!--alternative setting, if a user interface is needed-->
-		<TargetFramework>net6.0-windows</TargetFramework>
+		<TargetFramework>net7.0-windows</TargetFramework>
 <!--		<UseWpf>true</UseWpf>-->
 
 		<!--Path to LEEGOO BUILDERs binary folder (where EAS.LeegooBuilder.Client.GUI.Shell.exe is located) -->
-		<OutputPath>C:\Quelltexte\.Gitea\LeegooBuilder\Binaries\Debug-AnyCPU</OutputPath>
+		<OutputPath>$(SolutionDir)\Leegoo</OutputPath>
 
 		<AssemblyName>EAS.LeegooBuilder.Server.DebugScript.TestExport</AssemblyName>
 		<RootNamespace>EAS.LeegooBuilder.Server.DebugScript.TestExport</RootNamespace>
