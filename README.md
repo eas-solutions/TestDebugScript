@@ -7,6 +7,7 @@ Using DebugScript in Microsoft Visual Studio
 - [Requirements](#requirements)
 - [Adjustments](#adjustments)
   - [1. References](#1-references)
+    - [1.1 (Visual Studio Code only) launch.json](#11-visual-studio-code-only-launchjson)
   - [2. Change several namings](#2-change-several-namings)
   - [3. Source Code Adjustments](#3-source-code-adjustments)
     - [3.1 TestDebugScript.csproj](#31-testdebugscriptcsproj)
@@ -15,7 +16,7 @@ Using DebugScript in Microsoft Visual Studio
 - [Sample script to call your assembly](#sample-script-to-call-your-assembly)
 
 ## Roundup
-This is a demonstration of how to run LEEGOO BUILDER from Visual Studio to use it's debugger and to have the ability to set breakpoints to simplify script development.
+This is a demonstration of how to run LEEGOO BUILDER from Visual Studio (or Visual Studio Code) to use it's debugger and to have the ability to set breakpoints to simplify script development.
 
 
 ## Getting Started
@@ -32,7 +33,6 @@ The following requirements must be met.
 - MS Visual Studio 2022 or another development environment
 - (optional) a personal GitHub account 
 
-
 ## Adjustments
 There are several things to be adjusted to make this project working on a developers machine.
 
@@ -41,8 +41,19 @@ Add a Reference to the current version of DynamicEntities_*.dll.<br>
 You find the correct assembly in the "LocalAssemblyCache" folder, typically at this location:<br>
 `c:\Users\<YourUserName>\AppData\Roaming\LB.Net\LeegooBuilder.LAC\<CurrentLeegooBuilderVersion>\<UsedDataBaseName>@<HostName>\Environment\`<br>
 Reference the latest file in this folder wich file matches `DynamicEntities_*.dll`.
-<br>
 
+
+#### 1.1 (Visual Studio Code only) launch.json
+When using VSCode for debugging building and executing the script file will use the `.vscode\launch.json` to start LEEGOO BUILDER.
+The file assumes that the LEEGOO binaries are located in the `Leegoo` folder of the repository.
+To adjust the location of the LEEGOO binaries the following entries need to be edited:
+
+```json
+"program": "${workspaceFolder}\\Leegoo\\EAS.LeegooBuilder.Client.GUI.Shell.exe",
+"cwd": "${workspaceFolder}\\Leegoo",
+```
+
+<br>
 
 ### 2. Change several namings
 Change the following file names according to your requirements:
