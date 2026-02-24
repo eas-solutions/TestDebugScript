@@ -142,3 +142,7 @@ Set a breakpoint in your development environment e.g. at TestExportData.HelloWor
 Visual Studio should stop at the breakpoint.
 
 Take a look at the displayed messagebox and the output window underneath the source code.
+
+
+
+> This is a predecessor of vscode-debugging and is not used anymore, so its depricated
